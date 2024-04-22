@@ -1,23 +1,11 @@
-<!-- <?php
-$path = $path ?? './';
-$form = $form ?? '';
-
-if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['page'].'.php') ) {
-	include $filePage;
-	die();
-}
-?> -->
-
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Halyk Bank</title>
-  <meta
-    name="Halyk банк продолжает свою миссию предоставления широкого спектра финансовых услуг в Казахстане и других странах в соответствии с международными стандартами. Они стремятся обеспечить сохранность, эффективное размещение и увеличение средств клиентов и акционеров во всех сегментах финансового рынка, включая банковское дело, страхование, ценные бумаги и лизинг"
-    content="Title">
+  <title>ITMoney</title>
+  <meta name="description" content="Запустите ITMoney и зарабатывайте на автомате">
   <link rel="stylesheet" href="css/style.min.css">
   <!-- https://realfavicongenerator.net/ -->
   <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon.png">
@@ -28,163 +16,78 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
-    <!-- Facebook Pixel Code -->
-    <!-- <script>
-      ! function(f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function() {
-          n.callMethod ?
-            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s)
-      }(window, document, 'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-      <?php if (!empty($_GET['fb_pixel'])) : ?>
-        <?php foreach (explode(',', $_GET['fb_pixel']) as $pixel) : ?>
-          fbq('init', '<?= trim($pixel); ?>');
-        <?php endforeach; ?>
-      <?php else : ?>
-        fbq('init', '<?php echo isset($_GET['fb_pixel']) ? $_GET['fb_pixel'] : '000000000000000'; ?>');
-      <?php endif; ?>
-      fbq('track', 'PageView');
-    </script> -->
-
-    <!-- <noscript>
-      <?php if (!empty($_GET['fb_pixel'])) : ?>
-        <?php foreach (explode(',', $_GET['fb_pixel']) as $pixel) : ?>
-          <img height="1" width="1" style="display: none" src="https://www.facebook.com/tr?id=<?= trim($pixel); ?>&ev=PageView&noscript=1" />
-        <?php endforeach; ?>
-      <?php else : ?>
-        <img height="1" width="1" style="display: none" src="https://www.facebook.com/tr?id=<?php echo isset($_GET['fb_pixel']) ? $_GET['fb_pixel'] : '000000000000000'; ?>&ev=PageView&noscript=1" />
-      <?php endif; ?>
-    </noscript> -->
-    <!-- End Facebook Pixel Code -->
-
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-<?php echo isset($_GET['ga_id']) ? $_GET['ga_id'] : '000000000000000'; ?>"></script>
-
-    <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-
-      gtag('js', new Date());
-
-      gtag('config', 'AW-<?php echo isset($_GET['ga_id']) ? $_GET['ga_id'] : '000000000000000'; ?>');
-    </script> -->
-<!--
-    <script>
-      function call_gtag() {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-<?php echo isset($_GET['ga_id']) ? $_GET['ga_id'] : '000000000000000'; ?>/<?php echo isset($_GET['ga_event']) ? $_GET['ga_event'] : '000000000000000'; ?>'
-        });
-      }
-    </script> -->
-    <!-- End GTAG Code -->
-
-    <!-- TikTok Code -->
-    <!-- <script>
-      ! function(w, d, t) {
-        w.TiktokAnalyticsObject = t;
-        var ttq = w[t] = w[t] || [];
-        ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"], ttq.setAndDefer = function(t, e) {
-          t[e] = function() {
-            t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
-          }
-        };
-        for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
-        ttq.instance = function(t) {
-          for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++) ttq.setAndDefer(e, ttq.methods[n]);
-          return e
-        }, ttq.load = function(e, n) {
-          var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
-          ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = i, ttq._t = ttq._t || {}, ttq._t[e] = +new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {};
-          var o = document.createElement("script");
-          o.type = "text/javascript", o.async = !0, o.src = i + "?sdkid=" + e + "&lib=" + t;
-          var a = document.getElementsByTagName("script")[0];
-          a.parentNode.insertBefore(o, a)
-        };
-
-        ttq.load('<?php echo isset($_GET['tiktok']) ? $_GET['tiktok'] : '000000000000000'; ?>');
-      }(window, document, 'ttq');
-    </script> -->
-    <!-- End TikTok Code -->
 </head>
 
 <body class="page-body">
-  <header class="page-header container">
-    <picture>
-      <source type="image/webp" srcset="img/img/logo.webp">
-      <img width="182" height="64" class="page-header__img" src="img/img/logo.png" alt="Логотип Halyk Bank">
-    </picture>
-    <nav class="main-nav main-nav--closed main-nav--nojs">
-      <ul class="main-nav__list">
-        <li class="main-nav__item main-nav__item--shadow"></li>
-        <li class="main-nav__item"><a href="#bank">Преимущества</a></li>
-        <li class="main-nav__item"><a href="#calculator">Калькулятор</a></li>
-        <li class="main-nav__item"><a href="#about-bank">Halyk Bank</a></li>
-        <li class="main-nav__item"><a href="#license">Лицензия</a></li>
-        <li class="main-nav__item"><a href="#start">Инвестирование</a></li>
-        <li class="main-nav__item"><a href="#review">Отзывы</a></li>
-      </ul>
-      <a class="btn mobile-only" href="#leadform1">Присоединиться к проекту</a>
-      <button class="main-nav__toggle" type="button">
-        <span class="main-nav__open-btn-text visually-hidden">Mеню</span>
-      </button>
-    </nav>
-  </header>
-  <main>
+  <div class="header-promo">
+    <header class="page-header container">
+      <div class="page-header__logo">
+        <picture>
+          <source type="image/webp" srcset="img/img/logo.webp">
+          <img width="26" height="39" class="page-header__img" src="img/img/logo.png" alt="Логотип Halyk Bank">
+        </picture>
+        <span>ITMoney</span>
+      </div>
+      <div class="page-header__empty">
+        <p>Осталось свободных мест</p>
+        <span>12</span>
+      </div>
+      <a href="#leadform1" class="btn">Запустить сейчас</a>
+    </header>
     <section class="promo">
       <div class="promo__wrapper">
-        <h1 class="promo__heading heading">Получай дивиденды от <span>150&nbsp;000&nbsp;₸</span> в неделю</h1>
-        <p class="promo__about">Стань одним из первых инвесторов, приобретающих акции самого крупного банка в
-          Казахстане.</p>
-        <form action="#" class="form" method="POST" id="leadform1">
-          <input type="text" name="name" id="name" placeholder="Имя Фамилия">
-          <input type="email" name="email" id="email" placeholder="Эл. адрес">
-          <input type="tel" name="phone1" placeholder="" id="phone1" />
-          <input id="realPhone1" class="hidden-phone" type="hidden" name="phone" value="" />
-          <input type="hidden" name="currency" value="usd">
-          <input id="country1" type="hidden" name="country" value="ru">
-          <input type="hidden" name="comment" class="comment" value="">
-          <input type="hidden" name="campaign_name" value="">
-          <button class="btn submit_btn" type="submit">
-            <span>Отправить заявку</span>
-          </button>
-          <div class="form_message error inactive"
-            style="margin:15px 0;background-color: #ffd4d4;border: 2px dashed #ce0909;border-radius: 10px;padding: 20px;max-width: 350px;">
-          </div>
-        </form>
+        <h1 class="promo__heading heading">Запустите ITMoney и зарабатывайте на автомате</h1>
+        <p class="promo__about">Автоматизированный програмный комплекс для торговли на мировом валютном рынке</p>
+        <div class="promo__btns">
+          <a href="#leadform1" class="btn">Получить доступ</a>
+          <a href="#video" class="btn">Смотреть видео</a>
+        </div>
+        <p>Выплаты за сегодня</p>
+        <div class="promo__amount">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>6</span>
+          <span>$</span>
+        </div>
       </div>
 
-      <div class="promo__wrapper  promo__wrapper--mw53">
-        <div class="promo__video-bcg">
-          <div class="promo__video">
-            <button type="button" id="button-play">
-              <svg width="38" height="44">
-                <use xlink:href="img/sprite.svg#play"></use>
-              </svg>
-            </button>
-            <div style="padding:56.25% 0 0 0;position:relative;">
-              <iframe
-                src="https://player.vimeo.com/video/833805934?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&loop=1&"
-                frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Yandex_land">
-              </iframe>
-            </div>
-            <script src="https://player.vimeo.com/api/player.js"></script>
+      <div class="promo__wrapper">
+
+      </div>
+    </section>
+  </div>
+  <main>
+    <section class="how">
+      <div class="how__wrapper">
+
+        <div class="how__video">
+          <button type="button" id="button-play">
+            <svg width="38" height="44">
+              <use xlink:href="img/sprite.svg#play"></use>
+            </svg>
+          </button>
+          <div style="padding:56.25% 0 0 0;position:relative;">
+            <iframe
+              src="https://player.vimeo.com/video/833805934?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&loop=1&"
+              frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+              style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Yandex_land">
+            </iframe>
           </div>
+          <script src="https://player.vimeo.com/api/player.js"></script>
+
         </div>
+      </div>
+
+      <div class="how__wrapper">
+        <p class="how__about">ITMoney разработан на основе уникальных торговых алгоритмов,который с точностью от 97%
+          гарантирует прибыльное вхождение в сделку</p>
+        <p class="how__about">Благодаря встроенному скрипту входа вы гарантированно будете получать прибыль. Все что от
+          вас требуется, это успеть запустить ITMoney пока есть свободные места.</p>
+        <p class="how__about">На сегодняшний день это самая продвинутая система.</p>
+        <a href="#leadform1" class="btn">Получить доступ</a>
       </div>
     </section>
 
@@ -412,14 +315,15 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
 
     <section class="come-on container">
       <h2 class="come-on__heading heading">Получай дивиденды от 150 000 ₸ в неделю</h2>
-      <p class="come-on__about">Стань одним из первых инвесторов, приобретающих акции самого крупного банка в Казахстане.</p>
-      <form action="#" class="form form--bottom" method="POST" id="leadform2">
-        <input type="text" name="name" id="name2" placeholder="Имя Фамилия">
-        <input type="email" name="email" id="email2" placeholder="Эл. адрес">
-        <input type="tel" name="phone2" placeholder="" id="phone2" />
-        <input id="realPhone2" class="hidden-phone" type="hidden" name="phone" value="" />
+      <p class="come-on__about">Стань одним из первых инвесторов, приобретающих акции самого крупного банка в
+        Казахстане.</p>
+      <form action="#" class="form" method="POST" id="leadform1">
+        <input type="text" name="name" id="name" placeholder="Имя Фамилия">
+        <input type="email" name="email" id="email" placeholder="Эл. адрес">
+        <input type="tel" name="phone1" placeholder="" id="phone1" />
+        <input id="realPhone1" class="hidden-phone" type="hidden" name="phone" value="" />
         <input type="hidden" name="currency" value="usd">
-        <input id="country2" type="hidden" name="country" value="ru">
+        <input id="country1" type="hidden" name="country" value="ru">
         <input type="hidden" name="comment" class="comment" value="">
         <input type="hidden" name="campaign_name" value="">
         <button class="btn submit_btn" type="submit">
@@ -442,16 +346,7 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
       <a href="#leadform1" class="page-footer__polycy">Политика конфиденциальности</a>
       <a href="#leadform1" class="page-footer__polycy">Правила использования</a>
     </div>
-    <nav class="page-footer__wrapper">
-      <ul class="main-nav__list">
-        <li class="main-nav__item"><a href="#bank">Преимущества</a></li>
-        <li class="main-nav__item"><a href="#calculator">Калькулятор</a></li>
-        <li class="main-nav__item"><a href="#about-bank">Halyk Bank</a></li>
-        <li class="main-nav__item"><a href="#license">Лицензия</a></li>
-        <li class="main-nav__item"><a href="#start">Инвестирование</a></li>
-        <li class="main-nav__item"><a href="#review">Отзывы</a></li>
-      </ul>
-    </nav>
+
   </footer>
   <script src="js/jquery.min.js"></script>
   <script src="js/ion.rangeSlider.min.js"></script>
@@ -470,8 +365,8 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
       utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
       initialCountry: "auto",
       excludeCountries: ["UA"],
-      geoIpLookup: function(success, failure) {
-        $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      geoIpLookup: function (success, failure) {
+        $.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
           $("#country1").val(resp.country);
           $("#country2").val(resp.country);
           var countryCode =
@@ -489,7 +384,7 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
 
     $.validator.addMethod(
       "validNumber",
-      function(value, element, params) {
+      function (value, element, params) {
         var obj = params.object;
         if (obj.isValidNumber()) {
           var num = obj.getNumber().replace("+", "");
@@ -518,7 +413,7 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
     // Form validation
     $.validator.addMethod(
       "alphanumeric",
-      function(value, element) {
+      function (value, element) {
         return this.optional(element) || /^[a-zA-Zа-яА-ЯЁё\s]+$/.test(value.replace(/ +/g, ' ').trim()); //RU
       },
       "ⓘ Имя может содержать только буквы!"
@@ -526,14 +421,14 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
 
     $.validator.addMethod(
       "nameSurname",
-      function(value, element) {
+      function (value, element) {
         return this.optional(element) || /^[a-zA-Zа-яА-ЯЁё]+(\s+[a-zA-Zа-яА-ЯЁё]+)$/.test(value.replace(/ +/g, ' ').trim()); //RU
       },
       "ⓘ Укажите имя и фамилию через пробел"
     );
 
     // Email validation
-    $.validator.addMethod("emailValidation", function(value, element) {
+    $.validator.addMethod("emailValidation", function (value, element) {
       return this.optional(element) || /^[a-zA-Z0-9_.!#$%&\'*+\-\/=?^_`{|}~]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?){1,61}$/g.test(value);
     }, "ⓘ Введите правильный адрес");
 
@@ -546,8 +441,8 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
     emailForm2.addEventListener("change", removeDotsHyphens);
 
     //Trim whitespace on email input
-    $(function() {
-      $('input[type=email]').on('keypress', function(e) {
+    $(function () {
+      $('input[type=email]').on('keypress', function (e) {
         if (e.which == 32)
           return false;
       });
@@ -583,7 +478,7 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
           required: "ⓘ Это поле обязательное"
         },
       },
-      submitHandler: function(form, event) {
+      submitHandler: function (form, event) {
         sendAjaxForm(form);
         return false;
 
@@ -597,12 +492,12 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
         dataType: "json",
         data: $(form).serialize(),
         timeout: 30000,
-        beforeSend: function() {
+        beforeSend: function () {
           $(form).find(".submit_btn ").html('Отправление');
           $(form).find(".submit_btn").prop('disabled', true);
         },
 
-      }).done(function(response) {
+      }).done(function (response) {
         let result = response;
         let url = result.url;
         if (response.status === 'ok') {
@@ -611,7 +506,7 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
           ttq.page();
           $(form).find(".submit_btn").html('Данные отправлены успешно.');
           if (response.url) {
-            setTimeout(function() {
+            setTimeout(function () {
               window.location.href = response.url;
             }, 1000);
           } else {
@@ -626,7 +521,7 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
         }
 
 
-      }).fail(function(response) {
+      }).fail(function (response) {
         $(form).find('.error.form_message').addClass('active');
         $(form).find('.error.form_message').html('Во время отправки данных произошла ошибка!');
         $(form).find(".submit_btn ").html('Начать зарабатывать');
@@ -634,8 +529,8 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
       });
     }
 
-    $(window).on("load", function() {
-      setTimeout(function() {
+    $(window).on("load", function () {
+      setTimeout(function () {
         const selectedCountryIso1 = phoneInput1.getSelectedCountryData().iso2;
         if (selectedCountryIso1 === 'at' || selectedCountryIso1 === 'de') {
           var mask1 = jQuery("#phone1").attr("placeholder").replace(/[0-9]/g, 9) + "?9?9";
@@ -643,13 +538,13 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
           var mask1 = jQuery("#phone1").attr("placeholder").replace(/[0-9]/g, 9);
         }
 
-        $(document).ready(function() {
+        $(document).ready(function () {
           jQuery("#phone1").mask(mask1, {
             autoclear: false
           });
         });
 
-        jQuery("#phone1").on("countrychange", function(e, countryData) {
+        jQuery("#phone1").on("countrychange", function (e, countryData) {
           jQuery("#phone1").val("");
           const selectedCountryIso1 = phoneInput1.getSelectedCountryData().iso2;
           if (selectedCountryIso1 === 'at' || selectedCountryIso1 === 'de') {
@@ -671,8 +566,8 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
       utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
       initialCountry: "auto",
       excludeCountries: ["UA"],
-      geoIpLookup: function(success, failure) {
-        $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      geoIpLookup: function (success, failure) {
+        $.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
           var countryCode =
             resp && checkCountry(resp.country) ? resp.country : "DE";
           success(countryCode);
@@ -710,15 +605,15 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
           required: "ⓘ Это поле обязательное",
         },
       },
-      submitHandler: function(form, event) {
+      submitHandler: function (form, event) {
         sendAjaxForm(form);
         return false;
 
       },
     });
 
-    $(window).on("load", function() {
-      setTimeout(function() {
+    $(window).on("load", function () {
+      setTimeout(function () {
         const selectedCountryIso2 = phoneInput2.getSelectedCountryData().iso2;
         if (selectedCountryIso2 === 'at' || selectedCountryIso2 === 'de') {
           var mask1 = jQuery("#phone2").attr("placeholder").replace(/[0-9]/g, 9) + "?9?9";
@@ -726,13 +621,13 @@ if( isset($_GET['page']) && file_exists($filePage = __DIR__.'/pages/'.$_GET['pag
           var mask1 = jQuery("#phone2").attr("placeholder").replace(/[0-9]/g, 9);
         }
 
-        $(document).ready(function() {
+        $(document).ready(function () {
           jQuery("#phone2").mask(mask1, {
             autoclear: false
           });
         });
 
-        jQuery("#phone2").on("countrychange", function(e, countryData) {
+        jQuery("#phone2").on("countrychange", function (e, countryData) {
           jQuery("#phone2").val("");
           const selectedCountryIso2 = phoneInput2.getSelectedCountryData().iso2;
           if (selectedCountryIso2 === 'at' || selectedCountryIso2 === 'de') {

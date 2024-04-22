@@ -1,18 +1,6 @@
 /* Fonts */
 
 // Montserrat
-
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Montserrat Regular"),
-    url("../fonts/montserrat/Montserrat-Regular400.woff2") format("woff2"),
-    url("../fonts/montserrat/Montserrat-Regular400.woff") format("woff"),
-    url("../fonts/montserrat/Montserrat-Regular400.ttf") format("truetype");
-}
-
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
@@ -24,8 +12,30 @@
     url("../fonts/montserrat/Montserrat-Medium500.ttf") format("truetype");
 }
 
-// Inter
+// Montserrat
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Montserrat Alternates Medium"),
+    url("../fonts/montserratAlternates/MontserratAlternates-Medium.woff2") format("woff2"),
+    url("../fonts/montserratAlternates/MontserratAlternates-Medium.woff") format("woff"),
+    url("../fonts/montserratAlternates/MontserratAlternates-Medium.ttf") format("truetype");
+}
 
+@font-face {
+  font-family: "Montserrat Alternates";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local("Montserrat Alternates ExtraBold"),
+    url("../fonts/montserratAlternates/MontserratAlternates-ExtraBold.woff2") format("woff2"),
+    url("../fonts/montserratAlternates/MontserratAlternates-ExtraBold.woff") format("woff"),
+    url("../fonts/montserratAlternates/MontserratAlternates-ExtraBold.ttf") format("truetype");
+}
+
+// Inter
 @font-face {
   font-family: "Inter";
   font-style: normal;
@@ -35,4 +45,39 @@
     url("../fonts/inter/Inter-Regular.woff2") format("woff2"),
     url("../fonts/inter/Inter-Regular.woff") format("woff"),
     url("../fonts/inter/Inter-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Inter Bold"),
+    url("../fonts/inter/Inter-Bold.woff2") format("woff2"),
+    url("../fonts/inter/Inter-Bold.woff") format("woff"),
+    url("../fonts/inter/Inter-Bold.ttf") format("truetype");
+}
+
+// Aldrich
+@font-face {
+  font-family: "Aldrich";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Aldrich Regular"),
+    url("../fonts/aldrich/Aldrich-Regular.woff2") format("woff2"),
+    url("../fonts/aldrich/Aldrich-Regular.woff") format("woff"),
+    url("../fonts/aldrich/Aldrich-Regular.ttf") format("truetype");
+}
+
+// Aldrich
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Poppins Regular"),
+    url("../fonts/poppins/Poppins-Regular.woff2") format("woff2"),
+    url("../fonts/poppins/Poppins-Regular.woff") format("woff"),
+    url("../fonts/poppins/Poppins-Regular.ttf") format("truetype");
 }
