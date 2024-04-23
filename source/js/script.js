@@ -6,7 +6,6 @@ class App {
     this.showHideLicense();
     this.scroll();
     this.initSlider();
-    this.afterVideoPlay();
     this.onButtonPlay();
   }
 
@@ -152,24 +151,24 @@ class App {
     })
   }
 
-  afterVideoPlay() {
-    const vidoWrapper = document.querySelector('.promo__video')
-
-    const onPlay = () => {
-      vidoWrapper.style.borderRadius = 'unset';
-      this.btnPlay.style.display = 'none'
-    };
-
-    this.player.on('play', onPlay);
-  }
-
   onButtonPlay() {
-    const playVideo = () => {
-      this.player.play()
-      this.btnPlay.style.display = 'none'
+    const videosBlock = document.querySelectorAll('.how__video')
+
+
+    const playVideo = (block) => {
+      const iframe = block.querySelector('iframe');
+      const player = new Vimeo.Player(iframe);
+      const btnPlay = block.querySelector('#button-play');
+      const img = block.querySelector('.how__video-img')
+
+      btnPlay.addEventListener("click", () => {
+        player.play()
+        btnPlay.style.display = 'none'
+        img.style.display = 'none'
+      })
     }
 
-    this.btnPlay.addEventListener('click', playVideo);
+    videosBlock.forEach((vb) => { vb.addEventListener('click', playVideo(vb)) })
   }
 }
 
