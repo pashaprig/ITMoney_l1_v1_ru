@@ -1,0 +1,86 @@
+.gallery {
+  padding: 100px 65px;
+  font-family:"inter", "Arial", sans-serif;
+
+  @media (max-width: $tablet-width) {
+    padding: 80px 4px;
+  }
+}
+
+.gallery__heading {
+  margin-bottom: 50px;
+  font-family:"Montserrat Alternates", "Arial", sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: $basic-black;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 25px;
+  }
+}
+
+.gallery__wrapper {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 40px;
+
+  @media (max-width: $tablet-width) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 50px 28px;
+  text-align: center;
+  border-radius: 28px;
+  background-color: $bcg-black;
+
+  &--first-row {
+    grid-column: span 2;
+  }
+
+  &--second-row {
+    grid-column: span 3;
+    padding: 60px 95px;
+  }
+
+  @media (max-width: $tablet-width) {
+    gap: 13px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 40px 28px;
+
+    &--first-row {
+      grid-column: span 1;
+    }
+
+    &--second-row {
+      grid-column: span 1;
+      padding: 40px 28px;
+    }
+  }
+}
+
+.gallery__img {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.gallery__name {
+  color: $btn;
+}
+
+.gallery__city {
+  color: $btn;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.gallery__review {
+  text-align: left;
+}
