@@ -1,29 +1,69 @@
 .page-header {
-  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 28px;
-  padding-bottom: 28px;
+}
+
+.page-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family:"Montserrat Alternates", "Arial", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.page-header__action {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  .btn {
+    box-sizing: border-box;
+    height: 50px;
+  }
 
   @media (max-width: $tablet-width) {
-    padding-top: 21px;
-    padding-bottom: 21px;
+    flex-direction: column;
+    align-items: start;
+    position: absolute;
+    bottom: 50px;
+
+    .btn {
+      height: 40px;
+    }
   }
 }
 
-.page-header__img {
+.page-header__empty {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 10px;
+  font-family:"Inter", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: $bcg-black;
+  border-radius: 5px;
+  background: $basic-white;
+
   @media (max-width: $tablet-width) {
-    z-index: 3;
-    position: relative;
-    width: 109px;
-    height: 38px;
+    padding: 4.5px 10px;
   }
 }
 
-@media (max-width: $tablet-width) {
-  .main__img {
-    max-width: 100%;
-    object-fit: cover;
-  }
+.page-header__number {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  border-radius: 3px;
+  font-family:"Aldrich", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  background: $bcg-black;
+  color: $basic-white;
 }

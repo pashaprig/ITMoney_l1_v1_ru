@@ -20,42 +20,85 @@
 
 <body class="page-body">
   <div class="header-promo">
-    <header class="page-header container">
+    <header class="page-header">
       <div class="page-header__logo">
         <picture>
           <source type="image/webp" srcset="img/img/logo.webp">
-          <img width="26" height="39" class="page-header__img" src="img/img/logo.png" alt="Логотип Halyk Bank">
+          <img width="26" height="39" class="page-header__img" src="img/img/logo.png" alt="Логотип ITMoney">
         </picture>
         <span>ITMoney</span>
       </div>
-      <div class="page-header__empty">
-        <p>Осталось свободных мест</p>
-        <span>12</span>
+      <div class="page-header__action">
+        <div class="page-header__empty">
+          <p>Осталось свободных мест</p>
+          <span class="page-header__number">12</span>
+        </div>
+        <a href="#leadform1" class="btn">Получить доступ</a>
       </div>
-      <a href="#leadform1" class="btn">Запустить сейчас</a>
     </header>
+
     <section class="promo">
       <div class="promo__wrapper">
-        <h1 class="promo__heading heading">Запустите ITMoney и зарабатывайте на автомате</h1>
+        <h1 class="promo__heading heading">Запустите ITMoney и зарабатывайте на&nbsp;автомате</h1>
         <p class="promo__about">Автоматизированный програмный комплекс для торговли на мировом валютном рынке</p>
         <div class="promo__btns">
-          <a href="#leadform1" class="btn">Получить доступ</a>
-          <a href="#video" class="btn">Смотреть видео</a>
+          <a href="#leadform1" class="btn">Запустить сейчас</a>
+          <a href="#video" class="btn btn--reverse">
+            <span>Смотреть видео</span>
+            <svg width="12" height="12">
+              <use xlink:href="img/sprite.svg#arrow"></use>
+            </svg>
+          </a>
         </div>
-        <p>Выплаты за сегодня</p>
-        <div class="promo__amount">
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-          <span>4</span>
-          <span>5</span>
-          <span>6</span>
-          <span>$</span>
+        <div class="promo__payment">
+          <p>Выплаты за сегодня</p>
+          <div class="promo__amount">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>$</span>
+          </div>
         </div>
       </div>
-
       <div class="promo__wrapper">
+        <picture>
+          <source type="image/webp" media="(max-width: 768px)" srcset="img/img/robot-mob.webp">
+          <source type="image/webp" srcset="img/img/robot.webp">
 
+          <source media="(max-width: 768px)" srcset="img/img/robot-mob.png">
+          <img width="538" height="538" class="promo__img" src="img/img/robot.png" alt="Робот">
+        </picture>
+        <div class="promo__card promo__card--fs19 promo__card--1">
+          <span class="promo__dollar">$</span>
+          <div class="promo__profit">
+            <span class="promo__value">23.383</span>
+            <span class="promo__percent">+0.785%</span>
+          </div>
+        </div>
+        <div class="promo__card promo__card--fs19 promo__card--2">
+          <span class="promo__dollar">$</span>
+          <div class="promo__profit">
+            <span class="promo__value">63.876</span>
+            <span class="promo__percent">+1.677%</span>
+          </div>
+        </div>
+        <div class="promo__card promo__card--fs22 promo__card--3">
+          <span class="promo__dollar">$</span>
+          <div class="promo__profit">
+            <span class="promo__value">34.389</span>
+            <span class="promo__percent">+3.540%</span>
+          </div>
+        </div>
+        <div class="promo__card promo__card--fs27 promo__card--4">
+          <span class="promo__dollar">$</span>
+          <div class="promo__profit">
+            <span class="promo__value">13.459</span>
+            <span class="promo__percent">+1.032%</span>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -357,8 +400,6 @@
   <script src="js/jquery.maskedinput.js"></script>
 
   <script>
-    //phone
-    //first form
     var input1 = document.querySelector("#phone1");
     var phoneInput1 = window.intlTelInput(input1, {
       separateDialCode: true,
@@ -399,16 +440,13 @@
     );
 
     const nameForm1 = document.querySelector("#name");
-    const nameForm2 = document.querySelector("#name2");
     const emailForm1 = document.querySelector("#email");
-    const emailForm2 = document.querySelector("#email2");
 
     function removeExtraSpaces(e) {
       const valueWithoutSpaces = e.target.value.replace(/\s+/g, ' ').replace(/^\s+|\s+$/, '');
       e.target.value = valueWithoutSpaces
     }
     nameForm1.addEventListener("focusout", removeExtraSpaces);
-    nameForm2.addEventListener("focusout", removeExtraSpaces);
 
     // Form validation
     $.validator.addMethod(
@@ -438,7 +476,6 @@
       e.target.value = valueWithoutDotsHyphens;
     }
     emailForm1.addEventListener("change", removeDotsHyphens);
-    emailForm2.addEventListener("change", removeDotsHyphens);
 
     //Trim whitespace on email input
     $(function () {
@@ -553,89 +590,6 @@
             var mask1 = jQuery("#phone1").attr("placeholder").replace(/[0-9]/g, 9);
           }
           jQuery("#phone1").mask(mask1, {
-            autoclear: false
-          });
-        });
-      }, 1000);
-    });
-
-    //second form
-    var input2 = document.querySelector("#phone2");
-    var phoneInput2 = window.intlTelInput(input2, {
-      separateDialCode: true,
-      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-      initialCountry: "auto",
-      excludeCountries: ["UA"],
-      geoIpLookup: function (success, failure) {
-        $.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
-          var countryCode =
-            resp && checkCountry(resp.country) ? resp.country : "DE";
-          success(countryCode);
-        });
-      },
-    });
-
-    $("#leadform2").validate({
-      rules: {
-        phone2: {
-          required: true,
-          validNumber: {
-            object: phoneInput2,
-          },
-        },
-        name: {
-          required: true,
-          alphanumeric: true,
-          nameSurname: true,
-        },
-        email: {
-          required: true,
-          email: false,
-          emailValidation: true,
-        }
-      },
-      messages: {
-        phone2: {
-          required: "ⓘ Это поле обязательное",
-        },
-        name: {
-          required: "ⓘ Это поле обязательное",
-        },
-        email: {
-          required: "ⓘ Это поле обязательное",
-        },
-      },
-      submitHandler: function (form, event) {
-        sendAjaxForm(form);
-        return false;
-
-      },
-    });
-
-    $(window).on("load", function () {
-      setTimeout(function () {
-        const selectedCountryIso2 = phoneInput2.getSelectedCountryData().iso2;
-        if (selectedCountryIso2 === 'at' || selectedCountryIso2 === 'de') {
-          var mask1 = jQuery("#phone2").attr("placeholder").replace(/[0-9]/g, 9) + "?9?9";
-        } else {
-          var mask1 = jQuery("#phone2").attr("placeholder").replace(/[0-9]/g, 9);
-        }
-
-        $(document).ready(function () {
-          jQuery("#phone2").mask(mask1, {
-            autoclear: false
-          });
-        });
-
-        jQuery("#phone2").on("countrychange", function (e, countryData) {
-          jQuery("#phone2").val("");
-          const selectedCountryIso2 = phoneInput2.getSelectedCountryData().iso2;
-          if (selectedCountryIso2 === 'at' || selectedCountryIso2 === 'de') {
-            var mask1 = jQuery("#phone2").attr("placeholder").replace(/[0-9]/g, 9) + "?9?9";
-          } else {
-            var mask1 = jQuery("#phone2").attr("placeholder").replace(/[0-9]/g, 9);
-          }
-          jQuery("#phone2").mask(mask1, {
             autoclear: false
           });
         });
