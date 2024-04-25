@@ -51,9 +51,25 @@ label.error {
   line-height: 15px;
 }
 
-#phone1-error,
-#phone2-error {
+#phone1-error {
   display: flex;
   justify-content: end;
   margin-top: 5px;
 }
+
+.form__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  accent-color: $basic-white;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 120%;
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
+

@@ -3,8 +3,8 @@
 class App {
   init() {
     this.initRange();
-    this.initSlider();
     this.onButtonPlay();
+    this.isPolicyChecked();
   }
 
   constructor() {
@@ -52,32 +52,6 @@ class App {
     });
   }
 
-
-  initSlider() {
-    $(function () {
-      $('.slider').slick({
-        arrows: false,
-        slidesToShow: 3,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 2,
-              dots: true,
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              dots: true,
-            }
-          },
-        ]
-      });
-    })
-  }
-
   onButtonPlay() {
     const videosBlock = document.querySelectorAll('.how__video')
 
@@ -96,6 +70,31 @@ class App {
     }
 
     videosBlock.forEach((vb) => { vb.addEventListener('click', playVideo(vb)) })
+  }
+
+  isPolicyChecked() {
+    const leadform1 = document.querySelector('#leadform1');
+
+    const isChecked = (form) => {
+      const policyCheck = form.querySelector('[name="polycy"]')
+      const termsCheck = form.querySelector('[name="terms"]')
+      const sbmtBtn = form.querySelector('.submit_btn')
+
+
+      const checkPolicy = () => {
+        if (policyCheck.checked && termsCheck.checked) {
+          sbmtBtn.removeAttribute("disabled");
+        } else {
+          sbmtBtn.setAttribute("disabled", "disabled");
+        }
+      };
+      checkPolicy()
+
+      policyCheck.addEventListener('click', checkPolicy);
+      termsCheck.addEventListener('click', checkPolicy);
+    }
+
+    leadform1.addEventListener('click', isChecked(leadform1))
   }
 }
 
