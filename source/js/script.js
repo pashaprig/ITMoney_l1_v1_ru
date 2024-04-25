@@ -5,6 +5,8 @@ class App {
     this.initRange();
     this.onButtonPlay();
     this.isPolicyChecked();
+    this.changeFreeNumber();
+    this.increaseSum();
   }
 
   constructor() {
@@ -96,7 +98,82 @@ class App {
 
     leadform1.addEventListener('click', isChecked(leadform1))
   }
+
+  changeFreeNumber() {
+    const paragraph = document.querySelector('.page-header__number');
+
+    function decreaseNumber() {
+      let number = parseInt(paragraph.textContent);
+
+      if (number <= 1) {
+        return;
+      }
+
+      number--;
+      paragraph.classList.add('animation');
+
+      setTimeout(() => {
+        paragraph.textContent = number;
+      }, 750);
+
+      setTimeout(() => {
+        paragraph.classList.remove('animation');
+      }, 1500);
+
+      const randomDelay = Math.floor(Math.random() * (20000 - 5000 + 1)) + 5000;
+      setTimeout(decreaseNumber, randomDelay);
+    }
+
+    decreaseNumber();
+  }
+
+  increaseSum() {
+    function increaseNumber() {
+      const amountElement = document.querySelector('.promo__amount');
+
+      function getOriginalNumber() {
+        const spans = amountElement.querySelectorAll('span');
+        let numberString = '';
+        for (let i = 0; i < spans.length - 1; i++) {
+          numberString += spans[i].textContent;
+        }
+        return parseInt(numberString);
+      }
+
+      let number = getOriginalNumber();
+
+      function updateSpansWithNumber(number) {
+        const digits = number.toString().padStart(6, '0');
+        const spans = amountElement.querySelectorAll('span');
+        for (let i = 0; i < spans.length - 1; i++) {
+          if (spans[i].textContent !== digits[i]) {
+            spans[i].classList.add('animation');
+            setTimeout(() => {
+              spans[i].textContent = digits[i];
+            }, 750);
+            setTimeout(() => {
+              spans[i].classList.remove('animation');
+            }, 1500);
+          }
+          spans[i].textContent = digits[i];
+        }
+      }
+
+      updateSpansWithNumber(number);
+
+      setInterval(() => {
+        const randomIncrement = Math.floor(Math.random() * (100 - 15 + 1)) + 15;
+        number += randomIncrement;
+        updateSpansWithNumber(number);
+      }, 3000);
+    }
+
+    increaseNumber();
+  }
+
 }
+
+
 
 const app = new App();
 document.addEventListener('DOMContentLoaded', app.init());

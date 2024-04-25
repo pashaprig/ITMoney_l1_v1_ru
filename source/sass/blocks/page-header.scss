@@ -39,13 +39,14 @@
   display: flex;
   align-items: center;
   gap: 25px;
-  padding: 10px;
+  padding: 4.5px 10px;
   font-family:"Inter", "Arial", sans-serif;
   font-size: 16px;
   font-weight: 500;
   color: $bcg-black;
   border-radius: 5px;
   background: $basic-white;
+  outline: 1px solid $bcg-black;
 
   @media (max-width: $tablet-width) {
     padding: 4.5px 10px;
@@ -66,4 +67,8 @@
   font-weight: 400;
   background: $bcg-black;
   color: $basic-white;
+
+  &.animation {
+    animation: changeNumber 1s ease-in-out;
+  }
 }

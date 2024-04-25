@@ -59,10 +59,9 @@
 }
 
 .promo__about {
-  padding-right: 270px;
+    max-width: 294px;
 
   @media (max-width: $tablet-width) {
-    padding-right: 50px;
     line-height: 20px;
   }
 }
@@ -107,6 +106,10 @@
     font-weight: 400;
     background: $bcg-black;
     border-radius: 3px;
+
+    &.animation {
+      animation: changeNumber 1s ease-in-out;
+    }
   }
 }
 
