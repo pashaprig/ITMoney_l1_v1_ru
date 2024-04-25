@@ -26,6 +26,12 @@
 .irs-shadow {
     display: none;
 }
+.irs-handle,
+.irs-max,
+.irs-min {
+    position: absolute;
+    display: block;
+}
 .irs-handle {
     box-sizing: border-box;
     z-index: 1;
@@ -34,11 +40,8 @@
 .irs-handle.type_last {
     z-index: 2;
 }
-.irs-handle,
 .irs-max,
 .irs-min {
-    position: absolute;
-    display: block;
     cursor: default;
 }
 .irs-min {
@@ -689,6 +692,7 @@
 .iti input[type="text"] {
     position: relative;
     z-index: 0;
+    max-width: 100%;
     margin-top: 0 !important;
     margin-bottom: 0;
     padding-right: 36px;
@@ -780,11 +784,11 @@
 .iti__flag-box {
     margin-right: 6px;
 }
-input[type="tel"] {
-    margin-left: 100px !important;
+/* input[type="tel"] {
+    margin-left: 80px !important;
     padding-left: 10px !important;
-    width: calc(100% - 100px);
-}
+    width: calc(100% - 80px);
+} */
 .iti--allow-dropdown input,
 .iti--allow-dropdown input[type="tel"],
 .iti--allow-dropdown input[type="text"],
@@ -812,18 +816,20 @@ input[type="tel"] {
     background-color: transparent;
 }
 .iti--separate-dial-code .iti__selected-flag {
-    max-height: 45px;
-    padding: 22px 10px;
     font-size: 15px;
     font-weight: 400;
-    color: #757575;
-    border-radius: 4px;
-    border: 1px solid #e8e9e9;
-    background-color: white;
+    color: #fff;
+}
+.iti--separate-dial-code .iti__selected-flag::after {
+    content: "|";
+    margin-left: 5px;
+    font-size: 25px;
 }
 .iti--separate-dial-code .iti__selected-dial-code {
     margin-left: 6px;
-    font-size: 15px;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
 }
 .iti--container {
     position: absolute;
@@ -1848,6 +1854,7 @@ input[type="tel"] {
     height: 10px;
     background-position: -5307px 0;
 }
+.iti__flag,
 .iti__flag.iti__va {
     height: 15px;
     background-position: -5329px 0;
@@ -1884,7 +1891,13 @@ input[type="tel"] {
     height: 10px;
     background-position: -5500px 0;
 }
-.iti__flag,
+.iti__flag {
+    box-shadow: 0 0 1px 0 #888;
+    background-image: url(../img/flags.webp);
+    background-repeat: no-repeat;
+    background-color: #dbdbdb;
+    background-position: 20px 0;
+}
 .iti__flag.iti__xk {
     height: 15px;
     background-position: -5522px 0;
@@ -1908,13 +1921,6 @@ input[type="tel"] {
 .iti__flag.iti__zw {
     height: 10px;
     background-position: -5632px 0;
-}
-.iti__flag {
-    box-shadow: 0 0 1px 0 #888;
-    background-image: url(../img/flags.webp);
-    background-repeat: no-repeat;
-    background-color: #dbdbdb;
-    background-position: 20px 0;
 }
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .iti__flag {

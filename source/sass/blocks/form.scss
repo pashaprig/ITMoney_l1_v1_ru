@@ -2,18 +2,17 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  width: 300px;
+  gap: 20px;
+  width: 310px;
+  max-width: 100%;
 
-  &--bottom {
-    .btn {
-      max-width: 242px;
-      margin: 0 auto;
-    }
+  .btn {
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 100px;
   }
 
   @media (max-width: $tablet-width) {
-    width: 100%;
     margin-bottom: 30px;
   }
 }
@@ -22,11 +21,20 @@ input {
   box-sizing: border-box;
   max-height: 45px;
   padding: 22px 10px;
-  font-size: 15px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 16px;
   font-weight: 400;
-  color: $input-color;
-  border-radius: 4px;
-  border: 1px solid $input-border;
+  color: $basic-white;
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid #C7F0F9;
+
+  &::placeholder {
+    color: $basic-white;
+    font-family: "Inter", "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
 }
 
 .form_message.error.inactive {
@@ -44,7 +52,7 @@ input {
 }
 
 label.error {
-  margin-top: -25px;
+  margin-top: -20px;
   text-align: right;
   font-weight: 400;
   font-size: 12px;
@@ -58,6 +66,7 @@ label.error {
 }
 
 .form__checkbox-label {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -66,6 +75,26 @@ label.error {
   font-size: 12px;
   font-weight: 500;
   line-height: 120%;
+
+  input {
+    width: 18px;
+    height: 18px;
+  }
+
+  & input:checked::before {
+    position: absolute;
+    content: '';
+    background: url(../img/icons/check.svg);
+    display: block;
+    width: 18px;
+    height: 18px;
+    top: 6px;
+    left: 4px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+
 
   a {
     color: #fff;
