@@ -21,34 +21,17 @@ class App {
         skin: "round",
         hide_min_max: false,
         hide_from_to: true,
-        min: 50000,
-        max: 10000000,
-        from: 18000,
-        postfix: " ₸",
+        min: 250,
+        max: 100000,
+        from: 20000,
+        postfix: " $",
         grid: false,
         onStart: function (data) {
-          $("#calcResult").text(data.from.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' ₸');
+          $("#calcResult").text(data.from.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' $');
         },
         onChange: function (data) {
-          $("#profitValue").text(Math.round((data.from * 0.32) + data.from).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' ₸');
-          $("#calcResult").text(data.from.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' ₸');
-        },
-      });
-    });
-    $(function () {
-      $(".js-range-slider2").ionRangeSlider({
-        skin: "round",
-        hide_min_max: false,
-        hide_from_to: false,
-        min: 1,
-        max: 60,
-        from: 1,
-        postfix: " мес.",
-        grid: false,
-        onChange: function (data) {
-          const summValue = document.querySelector('#profitValue')
-          const value = summValue.textContent.slice(0, -1).replace(/ /g, '');
-          summValue.textContent = Math.round(Number(value * 1.02).toFixed(1)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' ₸';
+          $("#profitValue").text(Math.round((data.from * 2.92) + data.from).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' $');
+          $("#calcResult").text(data.from.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' $');
         },
       });
     });
@@ -165,7 +148,7 @@ class App {
         const randomIncrement = Math.floor(Math.random() * (100 - 15 + 1)) + 15;
         number += randomIncrement;
         updateSpansWithNumber(number);
-      }, 3000);
+      }, 2000);
     }
 
     increaseNumber();

@@ -1,0 +1,77 @@
+.profit__wrapper {
+  display: flex;
+  width: 800px;
+  padding: 40px 60px;
+  padding-bottom: 16px;
+  border-radius: 10px;
+  background: #003b46;
+  box-shadow: 0px 4px 37.1px 0px #187b8e;
+
+  @media (max-width: $tablet-width) {
+    min-width: unset;
+    margin: 0;
+    padding: 40px 30px;
+    padding-bottom: 6px;
+  }
+}
+
+.profit__heading {
+  margin-bottom: 30px;
+  color: $basic-white;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 3px 0px 7px grey;
+  }
+}
+
+.profit__btns {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.profit__amount {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  color: $bcg-black;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  background: $basic-white;
+  border-radius: 5px;
+}
+
+.profit__sum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 47px;
+  color: $bcg-black;
+  border-radius: 5px;
+  background: #8ADCC6;
+}
+
+.profit__img {
+  position: relative;
+  top: 10px;
+  margin: 0 auto;
+
+  @media (max-width: $tablet-width) {
+    top: 0;
+    width: 90%;
+  }
+}
+
+
+#profitValue {
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+

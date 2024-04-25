@@ -529,16 +529,16 @@
   height: 65px;
 }
 .irs--round .irs-line {
-  top: 36px;
-  height: 12px;
+  top: 28px;
+  height: 6px;
   background-color: #F4F4F4;
   border: 0.5px solid #A3AEBE;
   border-radius: 100px;
 }
 .irs--round .irs-bar {
-  top: 36px;
-  height: 14px;
-  background-color: $main-color;
+  top: 28px;
+  height: 8px;
+  background-color: #146879;
   border-radius: 100px;
 }
 .irs--round .irs-bar--single {
@@ -550,37 +550,26 @@
   background-color: rgba(222, 228, 236, 0.5);
 }
 .irs--round .irs-handle {
-  top: 31px;
+  top: 20px;
   width: 24px;
   height: 24px;
-  border: 4px solid $main-color;
+  border: 4px solid #146879;
   background-color: white;
   border-radius: 24px;
   box-shadow: 0 1px 3px rgba(0, 0, 255, 0.3);
 }
 .irs--round .irs-handle.state_hover,
 .irs--round .irs-handle:hover {
-  background-color: #f0f6ff;
+  background-color: $btn;
+  cursor: pointer;
 }
 .irs--round .irs-min,
 .irs--round .irs-max {
   font-family:"Inter", "Arial", sans-serif;
-  color: $text-black;
-  font-size: 16px;
-  line-height: 19px;
-  top: 70px;
-  padding: 3px 5px;
-  border-radius: 4px;
+  color: $basic-white;
+  font-size: 12px;
+  font-weight: 500;
 }
-
-.irs--round .irs-min::before {
-  content: "от ";
-}
-
-.irs--round .irs-max::before {
-  content: "до ";
-}
-
 .irs--round .irs-from,
 .irs--round .irs-to,
 .irs--round .irs-single {
