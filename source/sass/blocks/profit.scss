@@ -30,6 +30,16 @@
   display: flex;
   justify-content: center;
   gap: 50px;
+
+  @media (max-width: $tablet-width) {
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+
+    &>* {
+      width: 165px;
+    }
+  }
 }
 
 .profit__amount {

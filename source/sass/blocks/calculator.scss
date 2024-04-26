@@ -5,12 +5,14 @@
   justify-content: center;
   padding: 50px 130px;
   color: $basic-white;
-  background: $bcg-black;
+  background: $bcg-black no-repeat -50% 120% url("../img/bcg/header-promo2-bcg.webp");
+
 
   @media (max-width: $tablet-width) {
     flex-direction: column;
     gap: 0;
-    padding: 30px 6px;
+    padding: 50px 15px;
+    background: $bcg-black no-repeat 30% 80% url("../img/bcg/header-promo2-bcg.webp");
   }
 }
 
@@ -34,7 +36,27 @@
 
     .btn {
       width: fit-content;
+      margin-top: 60px;
       padding: 10px 40px;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    &--top {
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    &--mibble {
+      margin-bottom: 70px;
+    }
+
+    &--bottom {
+
+      .btn {
+        align-self: center;
+        margin-top: 40px;
+      }
     }
   }
 }
@@ -52,6 +74,13 @@
     max-width: 615px;
     margin-bottom: 60px;
   }
+
+  @media (max-width: $tablet-width) {
+    &--mw615 {
+      max-width: 99%;
+      margin-bottom: 25px;
+    }
+  }
 }
 
 .calculator__about {
@@ -61,4 +90,83 @@
 
 .calculator__range {
   width: 100%;
+}
+
+.steps__wrapper {
+  display: flex;
+  gap: 40px;
+
+  @media (max-width: $tablet-width) {
+    flex-direction: column;
+  }
+}
+
+.calculator__step {
+  display: flex;
+
+  &--arrow::after {
+    content: '';
+    background: url(../img/icons/arrow2.svg);
+    display: block;
+    width: 251px;
+    height: 16px;
+    margin-top: 40px;
+    margin-left: -30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: $tablet-width) {
+    flex-direction: column;
+    gap: 40px;
+    padding-left: 90px;
+
+    &--arrow::after {
+      content: '';
+      background: url(../img/icons/arrow2.svg);
+      width: 100px;
+      margin-bottom: 40px;
+      margin-left: 30px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.calculator__step-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculator__number {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 105px;
+  height: 105px;
+  margin-bottom: 23px;
+  padding: 35px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 49px;
+  font-weight: 400;
+  border-radius: 10.5px;
+  background: rgba(50, 50, 50, 0.50);
+}
+
+.calculator__sub-heading {
+  margin-bottom: 10px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.calculator__sub-about {
+  max-width: 195px;
+  line-height: 1.5;
+
+  @media (max-width: $tablet-width) {
+    font-size: 14px;
+  }
 }
